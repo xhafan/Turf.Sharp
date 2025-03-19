@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using GeoJSON.Net.Feature;
 using GeoJSON.Net.Geometry;
+using GeographicPosition= GeoJSON.Net.Geometry.Position;
 
 namespace TurfCS
 {

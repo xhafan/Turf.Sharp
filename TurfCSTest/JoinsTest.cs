@@ -6,6 +6,8 @@ using Newtonsoft.Json;
 using GeoJSON.Net.Feature;
 using TurfCS;
 using System.Linq;
+using GeographicPosition= GeoJSON.Net.Geometry.Position;
+using Assert= NUnit.Framework.Legacy.ClassicAssert;
 
 namespace TurfCSTest
 {

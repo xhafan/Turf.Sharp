@@ -4,6 +4,7 @@ using System.Linq;
 using GeoJSON.Net;
 using GeoJSON.Net.Feature;
 using GeoJSON.Net.Geometry;
+using GeographicPosition= GeoJSON.Net.Geometry.Position;
 
 namespace TurfCS
 {
@@ -110,7 +111,7 @@ namespace TurfCS
 				else if (geometry.Type == GeoJSONObjectType.LineString || geometry.Type == GeoJSONObjectType.MultiPoint)
 				{
 					var coords = geometry.Type == GeoJSONObjectType.LineString ?
-										 ((LineString)layer).Coordinates :
+										 ((LineString)layer).Coordinates.ToList() :
 										 ((MultiPoint)layer).Coordinates.Select(x => x.Coordinates).ToList();
 					for (var j = 0; j < coords.Count; j++) callback((GeographicPosition)coords[j]);
 				}
@@ -188,7 +189,7 @@ namespace TurfCS
 		 *   // props is equal to { foo: 1}
 		 * });
 		 */
-		static public void PropEach(IGeoJSONObject layer, Action<Dictionary<string, object>, int> callback)
+		static public void PropEach(IGeoJSONObject layer, Action<IDictionary<string, object>, int> callback)
 		{
 			if (layer.Type == GeoJSONObjectType.FeatureCollection)
 			{

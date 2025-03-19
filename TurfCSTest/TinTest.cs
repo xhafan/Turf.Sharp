@@ -4,6 +4,7 @@ using GeoJSON.Net.Feature;
 using Newtonsoft.Json;
 using NUnit.Framework;
 using TurfCS;
+using Assert= NUnit.Framework.Legacy.ClassicAssert;
 
 namespace TurfCSTest
 {

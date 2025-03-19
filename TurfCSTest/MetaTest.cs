@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using GeoJSON.Net;
 using GeoJSON.Net.Feature;
 using GeoJSON.Net.Geometry;
 using NUnit.Framework;
 using TurfCS;
+using GeographicPosition= GeoJSON.Net.Geometry.Position;
+using Assert= NUnit.Framework.Legacy.ClassicAssert;
 
 namespace TurfCSTest
 {
@@ -120,7 +121,7 @@ namespace TurfCSTest
 		[Test()]
 		public void PropEach()
 		{
-			Action<Dictionary<string, object>, int> callback = (Dictionary<string, object>obj, int i) =>
+			Action<IDictionary<string, object>, int> callback = (IDictionary<string, object>obj, int i) =>
 			{
 				Assert.AreEqual(obj, new Dictionary<string, object>() { { "a", 1 } });
 				Assert.AreEqual(i, 0);
