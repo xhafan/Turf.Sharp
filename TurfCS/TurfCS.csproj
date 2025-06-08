@@ -3,7 +3,7 @@
   <PropertyGroup>
     <RootNamespace>TurfCS</RootNamespace>
     <AssemblyName>TurfCS</AssemblyName>
-    <TargetFramework>net9.0</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <LangVersion>preview</LangVersion>
   </PropertyGroup>
 
